@@ -1,4 +1,5 @@
 import { ScanForm } from "@/components/ScanForm";
+import { ScanHistory } from "@/components/ScanHistory";
 import { CATEGORY_CONFIG } from "@/types";
 import Link from "next/link";
 
@@ -174,6 +175,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Scan history */}
+      <ScanHistory />
 
       {/* Scoring categories */}
       <section className="py-16 px-4 border-t border-white/10">
