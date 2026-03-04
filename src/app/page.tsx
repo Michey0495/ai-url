@@ -57,6 +57,41 @@ const jsonLd = {
     "7カテゴリ診断",
     "日本語改善提案",
   ],
+  creator: {
+    "@type": "Organization",
+    name: "ezoai.jp",
+    url: "https://ezoai.jp",
+  },
+  datePublished: "2026-03-05",
+  inLanguage: ["ja", "en"],
+};
+
+const howToJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "AI検索エンジンにサイトを最適化する方法",
+  description: "AEO Checkerを使って3ステップでAI検索対策を行う手順",
+  step: [
+    {
+      "@type": "HowToStep",
+      position: 1,
+      name: "URLを入力",
+      text: "AEO Checkerにアクセスし、診断したいサイトのURLを入力します。",
+      url: "https://aeo.ezoai.jp",
+    },
+    {
+      "@type": "HowToStep",
+      position: 2,
+      name: "スコアを確認",
+      text: "7カテゴリで自動スキャンされ、100点満点のスコアと改善ポイントが表示されます。",
+    },
+    {
+      "@type": "HowToStep",
+      position: 3,
+      name: "生成ファイルを設置",
+      text: "自動生成されたllms.txtとrobots.txtをダウンロードしてサイトのルートディレクトリに設置します。",
+    },
+  ],
 };
 
 const faqJsonLd = {
@@ -83,9 +118,16 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }}
+      />
       {/* Hero */}
       <section className="py-24 px-4">
         <div className="max-w-3xl mx-auto text-center space-y-8">
+          <p className="text-emerald-400 text-sm font-medium tracking-wide uppercase">
+            日本初のAEO診断ツール
+          </p>
           <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
             あなたのサイトは
             <br />
@@ -93,14 +135,43 @@ export default function Home() {
             に対応していますか?
           </h1>
           <p className="text-white/60 text-lg leading-relaxed max-w-2xl mx-auto">
-            URLを入力するだけで、ChatGPT・Perplexity・Claude・Gemini等の
-            AI検索エンジンでの発見されやすさを100点満点でスコアリング。
-            日本語で具体的な改善アクションを提示します。
+            ChatGPT・Perplexity・Claude・Geminiが回答を生成するとき、
+            あなたのサイトは引用されていますか？
+            <br />
+            URLを入力するだけで、AI検索での発見されやすさを
+            <span className="text-white font-medium">100点満点</span>
+            でスコアリング。
           </p>
           <p className="text-white/40 text-sm">
             無料・登録不要・30秒で診断完了
           </p>
           <ScanForm />
+        </div>
+      </section>
+
+      {/* Why AEO matters - urgency */}
+      <section className="py-16 px-4 border-t border-white/10">
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+            <div className="space-y-2">
+              <p className="text-3xl md:text-4xl font-bold text-emerald-400">40%</p>
+              <p className="text-white/50 text-sm leading-relaxed">
+                のWeb検索がAI検索エンジン経由に移行すると予測（2026年）
+              </p>
+            </div>
+            <div className="space-y-2">
+              <p className="text-3xl md:text-4xl font-bold text-emerald-400">93%</p>
+              <p className="text-white/50 text-sm leading-relaxed">
+                のサイトがAI検索最適化に未対応（当ツール調べ）
+              </p>
+            </div>
+            <div className="space-y-2">
+              <p className="text-3xl md:text-4xl font-bold text-emerald-400">30秒</p>
+              <p className="text-white/50 text-sm leading-relaxed">
+                で診断完了。改善に必要なファイルも自動生成
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -200,6 +271,31 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Who is this for */}
+      <section className="py-16 px-4 border-t border-white/10">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-white text-center mb-10">
+            こんな方におすすめ
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {[
+              "SEO対策はしているが、AI検索での表示状況が分からない",
+              "llms.txtやrobots.txtのAI対応を何から始めればいいか分からない",
+              "自社サイトがChatGPTやPerplexityで引用されているか確認したい",
+              "競合より先にAI検索対策を始めて差をつけたい",
+            ].map((text) => (
+              <div
+                key={text}
+                className="bg-white/5 border border-white/10 rounded-lg p-5 flex items-start gap-3"
+              >
+                <span className="text-emerald-400 mt-0.5 shrink-0">&#10003;</span>
+                <span className="text-white/70 text-sm leading-relaxed">{text}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-16 px-4 border-t border-white/10">
         <div className="max-w-3xl mx-auto">
@@ -226,6 +322,19 @@ export default function Home() {
               </details>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Bottom CTA */}
+      <section className="py-24 px-4 border-t border-white/10">
+        <div className="max-w-3xl mx-auto text-center space-y-6">
+          <h2 className="text-3xl font-bold text-white">
+            今すぐ、あなたのサイトを診断
+          </h2>
+          <p className="text-white/50">
+            AI検索エンジンに発見されるサイトへ。まずは現状を知ることから。
+          </p>
+          <ScanForm />
         </div>
       </section>
     </div>
