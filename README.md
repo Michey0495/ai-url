@@ -62,3 +62,19 @@ npm run build
 ```
 
 Vercel にデプロイ。ドメイン: `aeo.ezoai.jp`
+
+## 開発進捗
+
+### Night 1 (完了)
+- プロジェクト初期化 (Next.js 16, Tailwind CSS v4, shadcn/ui)
+- コアスキャナーエンジン (7カテゴリ、100点満点スコアリング)
+- 全API実装 (scan, result, generate, mcp)
+- トップページ、結果ページ、7つのガイドページ
+- AI公開チャネル (llms.txt, agent.json, robots.txt, MCP)
+- SEOメタデータ、OGP、sitemap.xml
+- Google Analytics対応 (環境変数)
+
+### Night 2 (完了)
+- フィードバックAPI (`/api/feedback`) - GitHub Issues自動作成
+- フィードバックウィジェット (ダークテーマ対応)
+- `npm run build` 成功確認
