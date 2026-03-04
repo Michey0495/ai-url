@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 
 export interface HistoryEntry {
@@ -52,11 +52,7 @@ function formatDate(iso: string): string {
 }
 
 export function ScanHistory() {
-  const [history, setHistory] = useState<HistoryEntry[]>([]);
-
-  useEffect(() => {
-    setHistory(getScanHistory());
-  }, []);
+  const [history] = useState<HistoryEntry[]>(() => getScanHistory());
 
   if (history.length === 0) return null;
 
