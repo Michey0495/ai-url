@@ -11,7 +11,7 @@ async function fetchPage(url: string): Promise<{ html: string; responseTime: num
   const res = await fetch(url, {
     headers: {
       "User-Agent":
-        "Mozilla/5.0 (compatible; AEOChecker/1.0; +https://aeo.ezoai.jp)",
+        "Mozilla/5.0 (compatible; AEOChecker/1.0; +https://ai-url.ezoai.jp)",
     },
     signal: AbortSignal.timeout(15000),
   });

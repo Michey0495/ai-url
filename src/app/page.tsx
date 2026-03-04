@@ -41,7 +41,7 @@ const jsonLd = {
   "@type": "WebApplication",
   name: "AEO Checker",
   alternateName: "AI検索対策チェッカー",
-  url: "https://aeo.ezoai.jp",
+  url: "https://ai-url.ezoai.jp",
   description:
     "URLを入力するだけでAI検索エンジン(ChatGPT, Perplexity, Claude, Gemini)での発見されやすさを100点満点でスコアリング。日本語で具体的な改善アクションを提示。",
   applicationCategory: "DeveloperApplication",
@@ -63,8 +63,8 @@ const jsonLd = {
     name: "ezoai.jp",
     url: "https://ezoai.jp",
   },
-  image: "https://aeo.ezoai.jp/api/og",
-  screenshot: "https://aeo.ezoai.jp/api/og",
+  image: "https://ai-url.ezoai.jp/api/og",
+  screenshot: "https://ai-url.ezoai.jp/api/og",
   datePublished: "2026-03-05",
   inLanguage: ["ja", "en"],
 };
@@ -80,7 +80,7 @@ const howToJsonLd = {
       position: 1,
       name: "URLを入力",
       text: "AEO Checkerにアクセスし、診断したいサイトのURLを入力します。",
-      url: "https://aeo.ezoai.jp",
+      url: "https://ai-url.ezoai.jp",
     },
     {
       "@type": "HowToStep",
