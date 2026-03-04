@@ -67,12 +67,6 @@ const jsonLd = {
   screenshot: "https://aeo.ezoai.jp/api/og",
   datePublished: "2026-03-05",
   inLanguage: ["ja", "en"],
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.8",
-    ratingCount: "12",
-    bestRating: "5",
-  },
 };
 
 const howToJsonLd = {
